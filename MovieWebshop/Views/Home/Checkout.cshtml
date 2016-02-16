@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Checkout</h2>
+<h6>@ViewBag.Day @ViewBag.Time</h6>
+@{
+    string price = "Total To Pay Is: ";
+    <b><i>@price @ViewBag.Price</i></b><br />
+}
+
+@Html.ActionLink("Leave Our Store A Review", "Create", "Reviews")

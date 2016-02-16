@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebshopLexicon.Models.Movie>
+@{
+    ViewBag.Title = "ShoppingCart";
+}
+
+<h2>ShoppingCart</h2>
+<h6>@ViewBag.Day @ViewBag.Time</h6>
+
+
+<p>
+    Here You Can See Items You Have Added To Your Cart
+</p>
+@{string val = "Item(s) in your cart: ";
+    <h4><b><i>@val <br />  @ViewBag.MovieName   @ViewBag.Price </i></b></h4>
+
+    string price = "Total To Pay Is: ";
+    <b><i>@price @ViewBag.Price</i></b><br />
+
+
+
+        @Html.ActionLink("Continue Shopping", "Index", "Movies")    @Html.ActionLink("Checkout", "Checkout", "Home")
+
+}
+
+
+

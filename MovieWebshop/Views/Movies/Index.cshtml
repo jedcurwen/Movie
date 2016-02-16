@@ -1,0 +1,87 @@
+﻿@model IEnumerable<WebshopLexicon.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+
+
+<p>
+    @Html.ActionLink("Add New Movie To Store", "Create")
+</p
+<p>
+    @using (Html.BeginForm("Index", "Movies", FormMethod.Get))
+    {
+
+    <b><i>Search By: </i></b>@Html.RadioButton("searchBy", "Movie Name", true)<text>Movie Name</text>
+    @Html.RadioButton("searchBy", "Director")<text>Director</text><br />
+    @Html.TextBox("search")<input type="submit" value="Search" />
+    }
+</p>
+
+
+
+
+
+           <table border="40">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+@if (Model.Count()== 0){
+    <tr>
+        <td colspan="6">Sorry No Hit's Were Found. Try Again.</td>
+    </tr>
+}
+else
+{
+foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseYear)
+            </td>
+            <td style="max-width:300px">
+
+                @Html.DisplayFor(modelItem => item.Description)
+
+
+            </td>
+            <td>
+                @Html.ActionLink("Add To Cart", "AddToCart", "Movies", new { id = item.MovieID }, null)
+
+            </td>
+        </tr>
+
+    }
+}
+</table>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<h6>@ViewBag.Day @ViewBag.Time</h6>
+
+<p>
+    Please Contact Me With The Form Below To Leave Feeback Of Your Service.
+</p>
+<form name="htmlform" method="post">
+    <table width="450px">
+        </tr>
+        <tr>
+            <td valign="top">
+                <label for="first_name">First Name *</label>
+            </td>
+            <td valign="top">
+                <input type="text" name="first_name" maxlength="50" size="30">
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top" ">
+  <label for=" last_name">
+                Last Name *</label>
+            </td>
+            <td valign="top">
+                <input type="text" name="last_name" maxlength="50" size="30">
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <label for="email">Email Address *</label>
+            </td>
+            <td valign="top">
+                <input type="text" name="email" maxlength="80" size="30">
+            </td>
+
+        </tr>
+        <tr>
+            <td valign="top">
+                <label for="telephone">Telephone Number</label>
+            </td>
+            <td valign="top">
+                <input type="text" name="telephone" maxlength="30" size="30">
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <label for="comments">Comments * (Max 100 Characters)</label>
+            </td>
+            <td valign="top">
+                <textarea name="comments" maxlength="100" cols="25" rows="6"></textarea>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <button onclick="myFunction()">Submit</button>
+
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+function myFunction() {
+    alert("Feedback Submitted. We Will Be In Touch In Dur Course.")
+}
+</script>
